@@ -1,7 +1,7 @@
 # ManageTRY
 Functions and scripts to manage information from TRY database
 
-In this dropbox folder you can find the several files (please don\'92t delete any file), but the most important are:
+In this dropbox folder you can find the several files (please don't delete any file), but the most important are:
 
 1. TRYdata.RData - this file contains all TRY database
 2. ExtractTRYdata.R - R script with a step by step to extract data from the TRYdata
