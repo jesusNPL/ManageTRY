@@ -25,7 +25,7 @@ TPLspp <- check_TPLScinames(scinames = spp, saveResults = FALSE)
 newspp <- as.character(TPLspp$TPLSciname)
 
 ##### Select traits by species #####
-# This simple command lines will returned a subset of the TRY database for only your species
+# This simple command lines will return a subset of the TRY database for only your species
 
 spp <- "a vector of scientific species names"
 
@@ -43,7 +43,7 @@ write.csv(spps, "your_file_name.csv")
 
 ##### Select traits by locations ####
 
-# locs a a vector with the location ID accroding to TRY website 
+# locs is a vector with the location ID accroding to TRY website 
 locs <- "a vector of locations"
 
 localities <- list()
@@ -61,7 +61,7 @@ write.csv(localities, "your_file_name.csv")
 # but first you need to be sure that you extracted your needed information, either by species names, by localities or both.
 
 ##### calculate the Mean and sample Variance trait values ##### 
-# The auxiliary function TraitMeanBySp will return a matrix with with species in ROWS and mean trait values in columns 
+# The auxiliary function TraitMeanBySp will return a matrix with species in ROWS and mean trait values in COLUMNS 
 # You just need to inform the TRY subset by species, locations or both
 
 MEANtriatSpecies <- TraitMeanBySp(spps)
