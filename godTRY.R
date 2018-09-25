@@ -5,8 +5,6 @@ extractByTrait <- function(tab, tid){
   for(p in 1:length(tid)){
     print(p)
     t1[[p]] <- tab[which(tab$TraitID == tid[p]), ]
-    #t2[[p]] <- t1[[p]][c(2, 4, 5, 10)]
-    
     t2[[p]] <- t1[[p]][c(7, 10, 11, 15, 21)]
   }
   tmp <- do.call(rbind, t2)
