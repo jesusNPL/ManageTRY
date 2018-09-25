@@ -7,6 +7,7 @@ source("AuxiliaryFunctions/demonTraitMeanBySp.R")
 source("AuxiliaryFunctions/demonTraitVARBySp.R")
 source("AuxiliaryFunctions/godTRY.R")
 source("AuxiliaryFunctions/demonCheckScinames.R")
+SOURCE("AuxiliaryFunctions/demonSelectBY.R")
 
 ##### Check your plant scientitic names according The Plant List (TPL) ######
 # Before select your species in the TRY database, is possible that you need to check 
@@ -29,33 +30,14 @@ newspp <- as.character(TPLspp$TPLSciname)
 
 spp <- "a vector of scientific species names"
 
-spps <- list()
-for (species in 1:length(spp)) {
-  svMisc::progress(species, max.value = length(spp))
-  spps[[species]] <- TRYdata[which(TRYdata$AccSpeciesName == spp[species]), ]
-  
-}
-
-spps <- do.call(rbind, spps)
-
-# You can also save your data into a CSV for further exploration.
-write.csv(spps, "your_file_name.csv")
+spps <- selecBYspp(spp = spp, saveResults = TRUE)
 
 ##### Select traits by locations ####
 
-# locs is a vector with the location ID accroding to TRY website 
+# localities is a vector with the location ID accroding to TRY website 
 locs <- "a vector of locations"
 
-localities <- list()
-for (loc in 1:length(locs)) {
-  svMisc::progress(loc, max.value = length(locs))
-  localities[[loc]] <- TRYdata[which(TRYdata$DatasetID == locs[loc]), ]
-  
-}
-
-localities <- do.call(rbind, localities)
-# You can also save your data into a CSV for further exploration.
-write.csv(localities, "your_file_name.csv")
+locations <- selectBYlocation(localities = locs, saveResults = TRUE)
 
 ## NOTE: at this point you can erase the TRYdata of your R environment using rm(TRYdata) only to free memory in your computer, 
 # but first you need to be sure that you extracted your needed information, either by species names, by localities or both.
@@ -72,9 +54,9 @@ VARtraitSpecies <- TraitVARBySp(spps)
 write.csv(MEANtriatSpecies, "your_file_name.csv")
 write.csv(VARtriatSpecies, "your_file_name.csv")
 
-# Also, you can load the subset that you saved in your computer, for example:
+# Also, you can load the subset that you saved in your computer usinf the functions selectBYspp or selectBYlocation, for example:
 
-file <- "C:/Users/jpintole/Dropbox/TRY_DB/Sample_TraitsTRY.csv"
+file <- "C:/Users/jpintole/Dropbox/TRY_DB/TraitsBYspecies.csv"
 
 data <- read.table(file = file, sep = ',', h = T, na.strings = "", stringsAsFactor = FALSE, quote = "\"", comment.char = "")
 
