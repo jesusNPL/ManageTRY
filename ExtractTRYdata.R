@@ -18,7 +18,7 @@ SOURCE("AuxiliaryFunctions/demonSelectBY.R")
 # The column TPLSciname contains the accepted scientific names of your species and you can
 # use this new information as a vector to select your traits in the next step.
 
-# You just need to enter a vector with your species names. Also, if you want to 
+# You just need to enter a vector with your species names.
 spp <- "a vector of scientific species names"
 
 TPLspp <- check_TPLScinames(scinames = spp, saveResults = FALSE)
@@ -34,7 +34,7 @@ spps <- selecBYspp(spp = spp, saveResults = TRUE)
 
 ##### Select traits by locations ####
 
-# localities is a vector with the location ID accroding to TRY website 
+# localities is a vector with the location ID according TRY website 
 locs <- "a vector of locations"
 
 locations <- selectBYlocation(localities = locs, saveResults = TRUE)
@@ -54,7 +54,7 @@ VARtraitSpecies <- TraitVARBySp(spps)
 write.csv(MEANtriatSpecies, "your_file_name.csv")
 write.csv(VARtriatSpecies, "your_file_name.csv")
 
-# Also, you can load the subset that you saved in your computer usinf the functions selectBYspp or selectBYlocation, for example:
+# Also, you can load the subset that you saved in your computer using the functions selectBYspp or selectBYlocation, for example:
 
 file <- "C:/Users/jpintole/Dropbox/TRY_DB/TraitsBYspecies.csv"
 
