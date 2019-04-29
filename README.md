@@ -8,7 +8,7 @@ In this dropbox folder you can find the several files (please don't delete any f
 3. AuxiliaryFunctions - this is a folder that contains some auxiliary R functions to help us to extract data from TRY and calculate for example the mean and sample variance for each trait by species.
 4. You can also find some compressed files, these compressed files contains the original TRY database, and are very heavy if you unzip them (~14 GB).
 
-To use the TRY database and to extract the TRIAT data for your species, please follow the next steps.
+To use the TRY database and to extract the TRAIT data for your species, please follow the next steps.
 
 1. In your computer open the R script "ExtractTRYdata.R" and run the two main steps, which are, load the TRYdata and call the auxiliary functions. Remember, the complete TRY database is heavy and is necessary to be patience while the database completely load into your computer.
 
