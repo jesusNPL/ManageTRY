@@ -37,7 +37,6 @@ TraitMeanBySp <- function(data, X = 'TraitID', Y = 'AccSpeciesName', Z = 'StdVal
   Rows <- paste(unique(M$Y))
   m <- matrix( , nrow = length(Rows), ncol = length(Cols), dimnames = list(Rows, Cols))
   for(Col in Cols){
-    #svMisc::progress(Col, max.value = length(Cols))
     for(Row in Rows)if(sum(M$Y == Row&M$X == Col)!=0)m[Rows == Row, Cols == Col] <- M$Z[M$Y == Row&M$X == Col]
   }
   colnames(m) <- Cols
