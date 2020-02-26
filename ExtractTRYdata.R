@@ -26,7 +26,7 @@ TPLspp <- check_TPLScinames(scinames = spp, saveResults = FALSE)
 newspp <- as.character(TPLspp$TPLSciname)
 
 ##### Select traits by species #####
-# This simple command lines will return a subset of the TRY database for only your species
+# This simple command lines will return a subset of the TRY database based on a vector of species
 
 spp <- "a vector of scientific species names"
 
@@ -39,7 +39,7 @@ locs <- "a vector of locations"
 
 locations <- selectBYlocation(localities = locs, saveResults = TRUE)
 
-## NOTE: at this point you can erase the TRYdata of your R environment using rm(TRYdata) only to free memory in your computer, 
+## NOTE: at this point you can erase the TRYdata of your R environment using rm(TRYdata) to free memory in your computer, 
 # but first you need to be sure that you extracted your needed information, either by species names, by localities or both.
 
 ##### calculate the Mean and sample Variance trait values ##### 
