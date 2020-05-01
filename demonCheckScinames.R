@@ -8,7 +8,7 @@
 # Usage:
 # scinames: a vector with scientific names that you need or want to check in the TPL
 # saveResults: logical if TRUE, a data.frame with the returned information will be 
-# save in your working directory
+# saved in your working directory
 
 check_TPLScinames <- function(scinames, saveResults){
   if ( ! ("Taxonstand" %in% installed.packages())) {install.packages("Taxonstand", dependencies = T)}
