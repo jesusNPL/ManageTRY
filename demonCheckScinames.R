@@ -1,5 +1,5 @@
 
-# Function that used the AWESOME R package "Taxonstand" to retrieve
+# Function that uses the AWESOME R package "Taxonstand" to retrieve
 # the accepted scientific names according The Plant List (TPL)
 # The function return a data.frame with five columns:
 # [1] "UsedScinames" "Family"       "Genus"        "TPLSciname"   "Status" 
