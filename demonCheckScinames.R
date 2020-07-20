@@ -16,7 +16,9 @@ check_TPLScinames <- function(scinames, saveResults){
   #require(Taxonstand)
   spnames <- list()
   for(names in 1:length(scinames)){
-    svMisc::progress(names, max.value = length(scinames))
+    cat(names, '\n')
+    print(scinames[names])
+    #svMisc::progress(names, max.value = length(scinames))
     spnames[[names]] <- Taxonstand::TPLck(sp = scinames[names], corr = TRUE, max.distance = 3, 
                               version = "1.1")
     
