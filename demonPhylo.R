@@ -1,3 +1,10 @@
+### Arguments
+# Spp = verctor of species names e.g., c(Elymus nutans, Festuca sinensis, Kobresia setschwanensis)
+# scenarios = "S2" or "S3". Scenario S3 is recommended by Jian and Qian. 
+# If S2 is selected a sample of trees will be returned, so you first need to inform the number of replicares, e.g., r = 100
+# saveTaxonomy = Logic, True or False
+# r = number of replicates, only if S2 is selected
+# output.tree = Logic, True or False
 
 demonPhyloPlants <- function(Spp, scenarios, saveTaxonomy, r, output.tree){
   if ( ! ("ape" %in% installed.packages())) {install.packages("ape", dependencies = T)}
