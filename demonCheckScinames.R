@@ -10,7 +10,7 @@
 # saveResults: logical if TRUE, a data.frame with the returned information will be 
 # saved in your working directory
 
-check_TPLScinames <- function(scinames, saveResults){
+check_TPLScinames <- function(scinames, saveTaxonomy){
   if ( ! ("Taxonstand" %in% installed.packages())) {install.packages("Taxonstand", dependencies = T)}
   if ( ! ("svMisc" %in% installed.packages())) {install.packages("svMisc", dependencies = T)}
   #require(Taxonstand)
@@ -30,7 +30,7 @@ check_TPLScinames <- function(scinames, saveResults){
   checkspp <- data.frame(spnames$Taxon, spnames$Family, spnames$New.Genus, newsciname,
                          spnames$New.Taxonomic.status)
   colnames(checkspp) <- c("UsedScinames", "TPLFamily", "TPLGenus", "TPLSciname", "Status")
-  if(saveResults == TRUE)
+  if(saveTaxonomy == TRUE)
   {
   write.csv(checkspp, "Scinames_check_in_TPL.csv")
   }
