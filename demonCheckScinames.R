@@ -10,7 +10,7 @@
 # saveResults: logical if TRUE, a data.frame with the returned information will be 
 # saved in your working directory
 
-check_TPLScinames <- function(scinames, saveTaxonomy = FALSE){
+check_TPLScinames <- function(scinames, saveTaxonomy = FALSE, infra = TRUE){
   if ( ! ("Taxonstand" %in% installed.packages())) {install.packages("Taxonstand", dependencies = T)}
   if ( ! ("svMisc" %in% installed.packages())) {install.packages("svMisc", dependencies = T)}
   #require(Taxonstand)
@@ -20,7 +20,7 @@ check_TPLScinames <- function(scinames, saveTaxonomy = FALSE){
     print(scinames[names])
     #svMisc::progress(names, max.value = length(scinames))
     spnames[[names]] <- Taxonstand::TPLck(sp = scinames[names], corr = TRUE, max.distance = 3, 
-                              version = "1.1", infra = TRUE)
+                              version = "1.1", infra = infra)
     
   }
   spnames <- do.call(rbind, spnames)
