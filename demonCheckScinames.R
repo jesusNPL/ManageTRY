@@ -10,7 +10,7 @@
 # saveResults: logical if TRUE, a data.frame with the returned information will be 
 # saved in your working directory
 
-check_TPLScinames <- function(scinames, saveTaxonomy){
+check_TPLScinames <- function(scinames, saveTaxonomy = FALSE){
   if ( ! ("Taxonstand" %in% installed.packages())) {install.packages("Taxonstand", dependencies = T)}
   if ( ! ("svMisc" %in% installed.packages())) {install.packages("svMisc", dependencies = T)}
   #require(Taxonstand)
