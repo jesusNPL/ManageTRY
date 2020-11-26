@@ -20,7 +20,7 @@ check_TPLScinames <- function(scinames, saveTaxonomy = FALSE){
     print(scinames[names])
     #svMisc::progress(names, max.value = length(scinames))
     spnames[[names]] <- Taxonstand::TPLck(sp = scinames[names], corr = TRUE, max.distance = 3, 
-                              version = "1.1")
+                              version = "1.1", infra = TRUE)
     
   }
   spnames <- do.call(rbind, spnames)
